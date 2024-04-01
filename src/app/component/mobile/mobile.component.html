@@ -1,0 +1,69 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-4" 
+            [ngClass]="{
+                'notAval' : !mobile.isAvailable
+            }"
+            *ngFor="let mobile of mobileProducts">
+            <p class="noProdAval" *ngIf="!mobile.isAvailable">
+                Product is currently unavailable
+            </p>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                        <div class="imgcontainer">
+                            <img [src]="mobile.image ? mobile.image : 'http://placehold.co/600x400'"  
+                            [alt]="mobile.name" 
+                            [title]="mobile.name" class="img-fluid"
+                            *ngIf="mobile.image; else noimg"
+                            >
+                            <!-- *ngIf="mobile.image; else noimgPlaceholder" -->
+
+                            <!-- <ng-template #noimgPlaceholder>
+                                <img src="http://placehold.co/600x400" alt="">
+                            </ng-template> -->
+                            <ng-template #noimg>
+                                <p class="noImg m-0 d-flex justify-content-center align-items-center">
+                                    Product is not available
+                                </p>
+                            </ng-template>
+                        </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>
+                                {{mobile.name}}
+                            </h4>
+
+                            <p >
+                                <span class="text-white p=2 rating"
+                                [ngClass]="{
+                                    'bg-success' : mobile.rating >= 4,
+                                    'bg-warning' : mobile.rating >= 3 && mobile.rating  < 4,
+                                    'bg-danger' : mobile.rating < 3
+
+                                }">
+                                    {{mobile.rating}}*
+                                </span>
+                            </p>
+                            <ul class="list-group">
+                                <li class="list-group-items" *ngFor="let mobile of mobilespecification">
+                                        {{mobile}}
+                                </li>
+                            </ul>
+
+                        </div>
+                        <div class="col-md-3">
+                                <ul class="list-group">
+                                    <li class="list-group-items" *ngFor="let price of mobileprice" >
+                                            {{price}}
+                                    </li>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -9,4 +9,5 @@ import { Component } from "@angular/core";
 export class ProductComponent {
     productName :string = "Iphone 15 pro";
     productId : number = 1234;
+    userName : string = "jhon"
 }

@@ -1,0 +1,39 @@
+
+.imgcontainer{
+    height: 300px;
+
+    img{
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    .noImg{
+        height: 100%;
+        border: 1px solid #ededed;
+        background-color: #ccc;
+
+    }
+}
+
+.rating{
+    border-radius: 3px;
+}
+
+.notAval{
+    filter: blur(.5px) grayscale(1);
+}
+
+.noProdAval{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    z-index: 9;
+
+}

@@ -1,7 +1,7 @@
 
-export interface Iplayer {
-    fname : string,
-    lname : string,
-    team : string,
-    bought : number,
-}
+// export interface Iplayer {
+//     fname : string,
+//     lname : string,
+//     team : string,
+//     bought : number,
+// }
